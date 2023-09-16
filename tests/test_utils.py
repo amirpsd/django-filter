@@ -1,6 +1,8 @@
 import datetime
+import unittest
 import warnings
 
+import django
 from django.db import models
 from django.db.models.constants import LOOKUP_SEP
 from django.db.models.fields.related import ForeignObjectRel
@@ -213,7 +215,7 @@ class GetFieldPartsTests(TestCase):
         """
         This simulates trying to create a FilterSet before the app registry has
         been populated. Lazy relationships have not yet been resolved from their
-        strings into their remote model referencess.
+        strings into their remote model references.
         """
 
         class TestModel(models.Model):
@@ -248,7 +250,7 @@ class ResolveFieldTests(TestCase):
         model_field = User._meta.get_field("username")
         lookups = model_field.class_lookups.keys()
 
-        # This is simple - the final ouput of an untransformed field is itself.
+        # This is simple - the final output of an untransformed field is itself.
         # The lookups are the default lookups registered to the class.
         for term in lookups:
             field, lookup = resolve_field(model_field, term)
@@ -513,6 +515,7 @@ class LabelForFilterTests(TestCase):
         self.assertEqual(label, "Exclude CIDR contains")
 
 
+@unittest.skipUnless(django.VERSION < (5, 0), "is_dst removed in Django 5.0")
 class HandleTimezone(TestCase):
     @override_settings(TIME_ZONE="America/Sao_Paulo")
     def test_handle_dst_ending(self):

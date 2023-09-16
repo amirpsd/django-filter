@@ -3,197 +3,187 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: django_filters 0.0.1\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-10 11:07+0000\n"
-"PO-Revision-Date: 2023-04-10 20:47+0000\n"
-"Last-Translator: Quadric <quadmachine@wp.pl>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/django-filter/"
-"django-filter/pl/>\n"
-"Language: pl\n"
+"POT-Creation-Date: 2023-08-21 12:25+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Storm Heg <storm@stormbase.digital>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
-"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
-"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
-"X-Generator: Weblate 4.17-dev\n"
-
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 #: conf.py:16
 msgid "date"
-msgstr "data"
+msgstr "datum"
 
 #: conf.py:17
 msgid "year"
-msgstr "rok"
+msgstr "jaar"
 
 #: conf.py:18
 msgid "month"
-msgstr "miesiąc"
+msgstr "maand"
 
 #: conf.py:19
 msgid "day"
-msgstr "dzień"
+msgstr "dag"
 
 #: conf.py:20
 msgid "week day"
-msgstr "dzień tygodnia"
+msgstr "weekdag"
 
 #: conf.py:21
 msgid "hour"
-msgstr "godzina"
+msgstr "uur"
 
 #: conf.py:22
 msgid "minute"
-msgstr "minuta"
+msgstr "minuur"
 
 #: conf.py:23
 msgid "second"
-msgstr "sekunda"
+msgstr "seconde"
 
 #: conf.py:27 conf.py:28
 msgid "contains"
-msgstr "zawiera"
+msgstr "bevat"
 
 #: conf.py:29
 msgid "is in"
-msgstr "zawiera się w"
+msgstr "zit in"
 
 #: conf.py:30
 msgid "is greater than"
-msgstr "powyżej"
+msgstr "is groter dan"
 
 #: conf.py:31
 msgid "is greater than or equal to"
-msgstr "powyżej lub równe"
+msgstr "is groter dan of gelijk aan"
 
 #: conf.py:32
 msgid "is less than"
-msgstr "poniżej"
+msgstr "is minder dan"
 
 #: conf.py:33
 msgid "is less than or equal to"
-msgstr "poniżej lub równe"
+msgstr "is minder dan of gelijk aan"
 
 #: conf.py:34 conf.py:35
 msgid "starts with"
-msgstr "zaczyna się od"
+msgstr "begint met"
 
 #: conf.py:36 conf.py:37
 msgid "ends with"
-msgstr "kończy się na"
+msgstr "eindigt met"
 
 #: conf.py:38
 msgid "is in range"
-msgstr "zawiera się w zakresie"
+msgstr "zit in bereik"
 
 #: conf.py:39
 msgid "is null"
-msgstr "jest wartością null"
+msgstr "is null"
 
 #: conf.py:40 conf.py:41
 msgid "matches regex"
-msgstr "pasuje do wyrażenia regularnego"
+msgstr "matcht regex"
 
 #: conf.py:42 conf.py:49
 msgid "search"
-msgstr "szukaj"
+msgstr "zoek"
 
 #: conf.py:44
 msgid "is contained by"
-msgstr "zawiera się w"
+msgstr "wordt bevat door"
 
 #: conf.py:45
 msgid "overlaps"
-msgstr "nakłada się"
+msgstr "overlapt"
 
 #: conf.py:46
 msgid "has key"
-msgstr "posiada klucz"
+msgstr "heeft key"
 
 #: conf.py:47
 msgid "has keys"
-msgstr "posiada klucze"
+msgstr "heeft keys"
 
 #: conf.py:48
 msgid "has any keys"
-msgstr "posiada jakiekolwiek klucze"
+msgstr "heeft keys"
 
 #: fields.py:94
 msgid "Select a lookup."
-msgstr "Wybierz wyszukiwanie."
+msgstr "Selecteer een lookup."
 
 #: fields.py:198
 msgid "Range query expects two values."
-msgstr "Zapytanie o zakres oczekuje dwóch wartości."
+msgstr "Bereik query verwacht twee waarden."
 
 #: filters.py:437
 msgid "Today"
-msgstr "Dziś"
+msgstr "Vandaag"
 
 #: filters.py:438
 msgid "Yesterday"
-msgstr "Wczoraj"
+msgstr "Gisteren"
 
 #: filters.py:439
 msgid "Past 7 days"
-msgstr "Ostatnie 7 dni"
+msgstr "Afgelopen 7 dagen"
 
 #: filters.py:440
 msgid "This month"
-msgstr "Ten miesiąc"
+msgstr "Deze maand"
 
 #: filters.py:441
 msgid "This year"
-msgstr "Ten rok"
+msgstr "Dit jaar"
 
 #: filters.py:543
 msgid "Multiple values may be separated by commas."
-msgstr "Wiele wartości można rozdzielić przecinkami."
+msgstr "Meerdere waarden kunnen gescheiden worden door komma's."
 
-#: filters.py:721
+#: filters.py:721 tests/test_filters.py:1670
 #, python-format
 msgid "%s (descending)"
-msgstr "%s (malejąco)"
+msgstr "%s (aflopend)"
 
 #: filters.py:737
 msgid "Ordering"
-msgstr "Sortowanie"
+msgstr "Volgorde"
 
 #: rest_framework/filterset.py:33
-#: templates/django_filters/rest_framework/form.html:5
+#: templates/rest_framework/form.html:5
 msgid "Submit"
-msgstr "Wyślij"
+msgstr "Indienen"
 
 #: templates/django_filters/rest_framework/crispy_form.html:4
 #: templates/django_filters/rest_framework/form.html:2
 msgid "Field filters"
-msgstr "Filtry pola"
+msgstr "Veld filters"
 
-#: utils.py:308
+#: utils.py:323
 msgid "exclude"
-msgstr "wyklucz"
+msgstr "uitsluiten"
 
 #: widgets.py:58
 msgid "All"
-msgstr "Wszystko"
+msgstr "Alles"
 
 #: widgets.py:162
 msgid "Unknown"
-msgstr "Nieznane"
+msgstr "Onbekend"
 
 #: widgets.py:162
 msgid "Yes"
-msgstr "Tak"
+msgstr "Ja"
 
 #: widgets.py:162
 msgid "No"
-msgstr "Nie"
-
-#~ msgid "Any date"
-#~ msgstr "Dowolna data"
-
-#~ msgid "This is an exclusion filter"
-#~ msgstr "Jest to filtr wykluczający"
+msgstr "Nee"

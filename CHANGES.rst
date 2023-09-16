@@ -1,3 +1,29 @@
+Version 23.2 (2023-4-30)
+------------------------
+
+* Deprecated the schema generation methods of the DRF related ``DjangoFilterBackend``.
+  These will be removed in version 25.1.
+
+  You should use `drf-spectacular <https://drf-spectacular.readthedocs.io/en/latest/>`_
+  for generating OpenAPI schemas with DRF.
+
+* In addition, stopped testing against the (very old now) ``coreapi`` schema generation.
+  These methods should continue to work if you're using them until v25.1, but
+  ``coreapi`` is no longer maintained, and is raising warnings against the current
+  versions of Python. To workaround this is not worth the effort at this point.
+
+* Updated Polish translations.
+
+Version 23.1 (2023-3-26)
+------------------------
+
+* Declared support for Django 4.2.
+
+* Various updated and new translations. Thanks to all who contributed, and
+  Weblate for hosting.
+
+* Fixed QueryArrayWidget.value_from_datadict() to not mutate input data. (#1540)
+
 Version 22.1 (2022-6-17)
 ------------------------
 
@@ -7,6 +33,10 @@ Version 22.1 (2022-6-17)
 * Added testing for Python 3.10 and Django 4.1.
 
 * Removed outdated deprecated warnings for code removed in version 2.1.
+
+* Removed `filter_class` (use `filterset_class`) and `filter_fields`
+  (`filterset_fields`) that were deprecated in [version 2.0
+  (2018)](https://django-filter.readthedocs.io/en/main/guide/migration.html#view-attributes-renamed-867).
 
 * The code base is now formatted with Black.
 
