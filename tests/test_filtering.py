@@ -7,11 +7,10 @@ from unittest import mock
 import django
 from django import forms
 from django.http import QueryDict
-from django.test import override_settings
+from django.test import TestCase, override_settings
 from django.utils import timezone
 from django.utils.timezone import make_aware, now
 
-from django_filters.compat import TestCase
 from django_filters.filters import (
     AllValuesFilter,
     AllValuesMultipleFilter,
@@ -1976,9 +1975,15 @@ class OrderingFilterTests(TestCase):
                 fields = ["username"]
 
         qs = User.objects.all()
-        f = F({"o": "username"}, queryset=qs)
-        names = f.qs.values_list("username", flat=True)
-        self.assertEqual(list(names), ["aaron", "alex", "carl", "jacob"])
+        tests = [
+            {"o": "username"},
+            QueryDict("o=username,"),
+        ]
+        for data in tests:
+            with self.subTest(data=data):
+                f = F(data, queryset=qs)
+                names = f.qs.values_list("username", flat=True)
+                self.assertEqual(list(names), ["aaron", "alex", "carl", "jacob"])
 
     def test_ordering_with_select_widget(self):
         class F(FilterSet):
@@ -1992,6 +1997,27 @@ class OrderingFilterTests(TestCase):
         f = F({"o": "username"}, queryset=qs)
         names = f.qs.values_list("username", flat=True)
         self.assertEqual(list(names), ["aaron", "alex", "carl", "jacob"])
+
+    def test_csv_input(self):
+        class F(FilterSet):
+            o = OrderingFilter(widget=forms.Select, fields=("username",),)
+
+            class Meta:
+                model = User
+                fields = ["username"]
+
+        qs = User.objects.all()
+        tests = [
+            {"o": ","},
+            QueryDict("o=%2c"),
+            QueryDict("o=,"),
+        ]
+        for data in tests:
+            with self.subTest(data=data):
+                f = F(data, queryset=qs)
+                self.assertIs(True, f.is_valid())
+                names = f.qs.values_list("username", flat=True)
+                self.assertEqual(list(names), ['alex', 'jacob', 'aaron', 'carl'])
 
 
 class MiscFilterSetTests(TestCase):

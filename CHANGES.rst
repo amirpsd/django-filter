@@ -1,3 +1,63 @@
+Version 24.2 (2024-03-27)
+-------------------------
+
+* Fixed a regression in v23.4 where callable choices were incorrectly evaluated
+  at filter instantiation, on Django versions prior to 5.0.
+
+  Thanks to Craig de Stigter for the report and reproduce.
+
+Version 24.1 (2024-03-08)
+-------------------------
+
+* Updated supported Python and Django versions, and resolved upcoming Django
+  deprecations.
+
+  Required versions are now at least Python 3.8 and Django 4.2.
+
+  Thanks to Michael Manganiello.
+
+* Allowed passing a FilterSet class to the filterset_factory().
+
+  Thanks to Birger Schacht.
+
+* Set empty default value of filterset data to MultiValueDict.
+
+  Thanks to Shlomo Gordon.
+
+* Preserve list values passed to the data dict in CSV widgets.
+
+  Thanks to Bryan Brancotte.
+
+* Updates French and Ukrainian localisations.
+
+  Thanks to Weblate.
+
+
+Version 23.5 (2023-12-05)
+-------------------------
+
+* Fixed OrderingFilter handling of empty values. (#1628)
+
+  Thanks to Matt Munns.
+
+Version 23.4 (2023-11-20)
+-------------------------
+
+* Official support for Django 5.0 and Python 3.12.
+
+* Fix DeprecationWarning for pkgutil.find_loader.
+
+  Thanks to `wmorrell`.
+
+* Adopted Furo theme for docs.
+
+Version 23.3 (2023-9-17)
+------------------------
+
+* Adds initial compatibility with Django 5.0, prior to Django 5.0a1.
+
+* Updates packaging to use pyproject.toml and Flit.
+
 Version 23.2 (2023-4-30)
 ------------------------
 
